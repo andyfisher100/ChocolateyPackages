@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>   
+    <id>sf-sdk</id>    
+    <version>3.2.176</version>
+    <packageSourceUrl>Where is this Chocolatey package located (think GitHub)? packageSourceUrl is highly recommended for the community feed</packageSourceUrl>   
+    <owners>Microsoft</owners>
+    <title>Service Fabric SDK (Install)</title>
+    <authors>Microsoft</authors>
+    <projectUrl>https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-get-started</projectUrl>
+    <iconUrl>http://cdn.rawgit.com/__REPLACE_YOUR_REPO__/master/icons/sf-sdk.png</iconUrl>
+    <copyright>2018 Microsoft</copyright>
+    <projectSourceUrl>https://github.com/Microsoft/service-fabric</projectSourceUrl>
+    <docsUrl>https://docs.microsoft.com/en-us/azure/service-fabric/</docsUrl>    
+    <bugTrackerUrl>https://github.com/Microsoft/service-fabric/issues</bugTrackerUrl>
+    <tags>sf-sdk Azure Service Fabric Service-Fabric</tags>
+    <summary>Service Fabric SDK and tools installer</summary>
+    <description>Azure Service Fabric is a distributed systems platform that makes it easy to package, deploy, and manage scalable and reliable microservices and containers</description>   
+  </metadata>
+  <files>    
+    <file src="tools\**" target="tools" />    
+  </files>
+</package>
