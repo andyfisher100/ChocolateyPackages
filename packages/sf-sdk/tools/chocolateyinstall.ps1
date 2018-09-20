@@ -1,9 +1,12 @@
-﻿$script_path = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
-$install_Script = $(Join-Path $script_path "sf-sdk-install.ps1")
-. $install_Script
+﻿$ErrorActionPreference = 'Stop';
+
+$toolsPath = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+. "$toolsPath\sf-sdk-install.ps1"
   
-try {    
-    chocolatey-install   
+try 
+{
+    install-chocolateypackage -toolspath $toolsPath
+ 
 } catch {
     if ($_.Exception.InnerException) {
         $msg = $_.Exception.InnerException.Message

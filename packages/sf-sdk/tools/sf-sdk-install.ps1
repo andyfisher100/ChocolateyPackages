@@ -15,7 +15,7 @@ function get-programfilesdir
 
 function get-osArchitecture
 {
-    return get-osArchitecture
+    return (Get-Item "Env:PROCESSOR_ARCHITECTURE").Value 
 }
 
 function install-WebPlatformInstaller
@@ -25,9 +25,10 @@ function install-WebPlatformInstaller
         $scriptPath)
     
     # install the service fabric sdk
-    $outpath = Invoke-WebRequest $url -OutFile "$scriptPath\WebPlatformInstaller.msi" -UseBasicParsing;
-    Start-Process "msiexec" -ArgumentList '/i', $outpath, '/passive', '/quiet', '/norestart', '/qn' -NoNewWindow -Wait; 
-    Remove-Item $outpath
+    $msiPath = "$scriptPath\WebPlatformInstaller.msi"
+    Invoke-WebRequest $url -OutFile $msiPath -UseBasicParsing;
+    Start-Process "msiexec" -ArgumentList '/i', "$msiPath", '/passive', '/quiet', '/norestart', '/qn' -NoNewWindow -Wait;
+    Remove-Item $msiPath
 }
 
 function install-ServiceFabricSdk
@@ -40,10 +41,13 @@ function install-ServiceFabricSdk
 
 function install-chocolateypackage
 {
-    $script_path = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
+    param(
+        $toolspath
+    )
+
     $osArch = get-osArchitecture    
 
-    if ($osArch -eq 64) {
+    if ($osArch -eq "AMD64") {
         $url = "https://download.microsoft.com/download/C/F/F/CFF3A0B8-99D4-41A2-AE1A-496C08BEB904/WebPlatformInstaller_amd64_en-US.msi"
         $exe = "WebpiCmd-x64.exe"        
     }
@@ -58,8 +62,8 @@ function install-chocolateypackage
 
     if ($VerifyWI -eq $false)
     {
-        install-WebPlatformInstaller -url $url -scriptPath $script_path
+        install-WebPlatformInstaller -url $url -scriptPath $toolspath
     }
 
-    install-ServiceFabricSdk -installer $installer
+    install-ServiceFabricSdk -installer $webInstaller
 }
