@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>   
+    <id>web-platform-installer</id>    
+    <version>5.0</version>
+    <packageSourceUrl>https://github.com/andyfisher100/ChocolateyPackages/</packageSourceUrl>   
+    <owners>Andrew Fisher</owners>
+    <title>Microsoft Web Platform Installer</title>
+    <authors>Microsoft</authors>
+    <projectUrl>https://docs.microsoft.com/en-us/iis/install/web-platform-installer/using-the-microsoft-web-platform-installer</projectUrl>
+    <iconUrl>https://ms-azuretools.gallerycdn.vsassets.io/extensions/ms-azuretools/vscode-service-fabric-reliable-services/0.1.2/1530298477542/Microsoft.VisualStudio.Services.Icons.Default</iconUrl>
+    <copyright>2018 Microsoft</copyright>
+    <projectSourceUrl>https://docs.microsoft.com/en-us/iis/install/web-platform-installer/using-the-microsoft-web-platform-installer</projectSourceUrl>
+    <docsUrl>https://docs.microsoft.com/en-us/iis/install/web-platform-installer/using-the-microsoft-web-platform-installer</docsUrl>    
+    <bugTrackerUrl>https://docs.microsoft.com/en-us/iis/install/web-platform-installer/using-the-microsoft-web-platform-installer</bugTrackerUrl>
+    <tags>wpi platform-installer</tags>
+    <summary>Installs the Microsoft Windows PLatform Installer</summary>
+    <description>The Microsoft Web Platform Installer (Web PI) makes it easy for you to download, install, and keep up to date on the latest software components of the Microsoft Web Platform for development and application hosting on the Windows operating system</description>       
+  </metadata>
+  <files>    
+    <file src="tools\**" target="tools" />    
+  </files>
+</package>

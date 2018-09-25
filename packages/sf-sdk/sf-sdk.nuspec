@@ -16,6 +16,9 @@
     <tags>sf-sdk Azure Service Fabric Service-Fabric</tags>
     <summary>Service Fabric SDK and tools installer</summary>
     <description>Azure Service Fabric is a distributed systems platform that makes it easy to package, deploy, and manage scalable and reliable microservices and containers</description>   
+    <dependencies>
+      <dependency id="web-platform-installer" version="5.0" />
+    </dependencies>
   </metadata>
   <files>    
     <file src="tools\**" target="tools" />    

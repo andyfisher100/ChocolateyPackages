@@ -1,17 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$toolsPath = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-. "$toolsPath\sf-sdk-install.ps1"
-  
-try 
-{
-    install-chocolateypackage -toolspath $toolsPath
- 
-} catch {
-    if ($_.Exception.InnerException) {
-        $msg = $_.Exception.InnerException.Message
-    } else {
-        $msg = $_.Exception.Message
-    }
-    throw 
-}
+Update-SessionEnvironment
+
+#Get the windows installer path
+$wpi = Get-Command WebPICMD | ForEach-Object { $_.Path }
+"Installing $env:chocolateyPackageName using Microsoft Web Platform Installer"
+Start-ChocolateyProcessAsAdmin $wpi -statements "/Install /Products:MicrosoftAzure-ServiceFabric-CoreSDK /AcceptEULA"
