@@ -8,7 +8,7 @@
     <title>Service Fabric SDK (Install)</title>
     <authors>Microsoft</authors>
     <projectUrl>https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-get-started</projectUrl>
-    <iconUrl>https://ms-azuretools.gallerycdn.vsassets.io/extensions/ms-azuretools/vscode-service-fabric-reliable-services/0.1.2/1530298477542/Microsoft.VisualStudio.Services.Icons.Default</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/andyfisher100/ChocolateyPackages/2a8f2e63/icons/Microsoft.VisualStudio.Services.Icons.png</iconUrl>
     <copyright>2018 Microsoft</copyright>
     <projectSourceUrl>https://github.com/Microsoft/service-fabric</projectSourceUrl>
     <docsUrl>https://docs.microsoft.com/en-us/azure/service-fabric/</docsUrl>    
@@ -17,7 +17,7 @@
     <summary>Service Fabric SDK and tools installer</summary>
     <description>Azure Service Fabric is a distributed systems platform that makes it easy to package, deploy, and manage scalable and reliable microservices and containers</description>   
     <dependencies>
-      <dependency id="web-platform-installer" version="5.0" />
+      <dependency id="webpicmd" version="7.1.50430.20141001" />
     </dependencies>
   </metadata>
   <files>    
